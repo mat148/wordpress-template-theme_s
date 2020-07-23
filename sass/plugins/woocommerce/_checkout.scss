@@ -4,7 +4,6 @@
 
 		.form-row-first {
 			float: left;
-			margin-right: $columns__margin;
 		}
 
 		.form-row-last {
@@ -14,8 +13,6 @@
 
 		.form-row-first,
 		.form-row-last {
-
-			@include column-width(2);
 		}
 	}
 }
