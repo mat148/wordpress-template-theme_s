@@ -11,6 +11,9 @@
 html {
 	line-height: 1.15;
 	-webkit-text-size-adjust: 100%;
+	font-family: sans-serif;
+	-ms-text-size-adjust: 100%;
+	-webkit-text-size-adjust: 100%;
 }
 
 /* Sections
@@ -28,8 +31,33 @@ body {
  * Render the `main` element consistently in IE.
  */
 
-main {
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+main,
+menu,
+nav,
+section,
+summary {
 	display: block;
+}
+
+audio,
+canvas,
+progress,
+video {
+  display: inline-block; /* 1 */
+  vertical-align: baseline; /* 2 */
+}
+
+audio:not([controls]) {
+	display: none;
+	height: 0;
 }
 
 /**
@@ -42,6 +70,11 @@ h1 {
 	margin: 0.67em 0;
 }
 
+mark {
+	background: #ff0;
+	color: #000;
+}
+
 /* Grouping content
 	 ========================================================================== */
 
@@ -51,6 +84,7 @@ h1 {
  */
 
 hr {
+	-moz-box-sizing: content-box;
 	box-sizing: content-box;
 	height: 0;
 	overflow: visible;
@@ -64,6 +98,7 @@ hr {
 pre {
 	font-family: monospace, monospace;
 	font-size: 1em;
+	overflow: auto;
 }
 
 /* Text-level semantics
@@ -77,6 +112,11 @@ a {
 	background-color: transparent;
 }
 
+a:active,
+a:hover {
+	outline: 0;
+}
+
 /**
  * 1. Remove the bottom border in Chrome 57-
  * 2. Add the correct text decoration in Chrome, Edge, IE, Opera, and Safari.
@@ -87,6 +127,12 @@ abbr[title] {
 	text-decoration: underline;
 	text-decoration: underline dotted;
 }
+
+dfn {
+	font-style: italic;
+}
+
+
 
 /**
  * Add the correct font weight in Chrome, Edge, and Safari.
@@ -104,7 +150,8 @@ strong {
 
 code,
 kbd,
-samp {
+samp,
+pre {
 	font-family: monospace, monospace;
 	font-size: 1em;
 }
@@ -147,6 +194,15 @@ sup {
 
 img {
 	border-style: none;
+	border: 0;
+}
+
+svg:not(:root) {
+	overflow: hidden;
+}
+
+figure {
+	margin: 1em 40px;
 }
 
 /* Forms
@@ -165,6 +221,9 @@ textarea {
 	font-family: inherit;
 	font-size: 100%;
 	line-height: 1.15;
+	margin: 0;
+	color: inherit;
+	font: inherit;
 	margin: 0;
 }
 
@@ -193,10 +252,20 @@ select {
  */
 
 button,
-[type="button"],
-[type="reset"],
-[type="submit"] {
+html input[type="button"],
+input[type="reset"],
+input[type="submit"] {
 	-webkit-appearance: button;
+	cursor: pointer;
+}
+
+button[disabled],
+html input[disabled] {
+  	cursor: default;
+}
+
+input {
+	line-height: normal;
 }
 
 /**
@@ -208,6 +277,7 @@ button::-moz-focus-inner,
 [type="reset"]::-moz-focus-inner,
 [type="submit"]::-moz-focus-inner {
 	border-style: none;
+	border: 0;
 	padding: 0;
 }
 
@@ -222,12 +292,37 @@ button:-moz-focusring,
 	outline: 1px dotted ButtonText;
 }
 
+input[type="checkbox"],
+input[type="radio"] {
+	box-sizing: border-box;
+	padding: 0;
+}
+
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  	height: auto;
+}
+
+input[type="search"] {
+	-webkit-appearance: textfield;
+	-moz-box-sizing: content-box;
+	-webkit-box-sizing: content-box;
+	box-sizing: content-box;
+}
+
+input[type="search"]::-webkit-search-cancel-button,
+input[type="search"]::-webkit-search-decoration {
+  	-webkit-appearance: none;
+}
+
 /**
  * Correct the padding in Firefox.
  */
 
 fieldset {
-	padding: 0.35em 0.75em 0.625em;
+	border: 1px solid #c0c0c0;
+	margin: 0 2px;
+	padding: 0.35em 0.625em 0.75em;
 }
 
 /**
@@ -243,6 +338,7 @@ legend {
 	display: table;
 	max-width: 100%;
 	padding: 0;
+	border: 0;;
 	white-space: normal;
 }
 
@@ -260,6 +356,10 @@ progress {
 
 textarea {
 	overflow: auto;
+}
+
+optgroup {
+	font-weight: bold;
 }
 
 /**
@@ -333,17 +433,20 @@ summary {
 	 ========================================================================== */
 
 /**
- * Add the correct display in IE 10+.
+ * Add the correct display in IE 10.
  */
 
+[hidden],
 template {
 	display: none;
 }
 
-/**
- * Add the correct display in IE 10.
- */
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
 
-[hidden] {
-	display: none;
+td,
+th {
+	padding: 0;
 }
