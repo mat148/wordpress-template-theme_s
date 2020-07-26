@@ -1,6 +1,10 @@
 # Wordpress boilerplate template
 Based off of [_s](https://underscores.me/) and [skeleton.css](http://getskeleton.com/)
 
+## Setup
+- composer install
+- npm install
+
 ## _s CLI Commands
 - `composer lint:wpcs` : checks all PHP files against PHP Coding Standards.
 - `composer lint:php` : checks all PHP files for syntax errors.
