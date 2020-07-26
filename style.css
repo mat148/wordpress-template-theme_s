@@ -469,6 +469,35 @@ html {
   padding-right: 0.5rem;
   padding-left: 0.5rem; }
 
+.flex {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex; }
+
+.flex-align-center {
+  align-items: center; }
+
+.flex-align-start {
+  align-items: flex-start; }
+
+.flex-align-end {
+  align-items: flex-end; }
+
+.flex-justify-center {
+  justify-content: center; }
+
+.flex-justify-start {
+  justify-content: flex-start; }
+
+.flex-justify-end {
+  justify-content: flex-end; }
+
+.flex-justify-between {
+  justify-content: space-between; }
+
+.flex-column {
+  flex-direction: column; }
+
 /* For devices larger than 400px */
 @media (min-width: 400px) {
   .container {
