@@ -5,6 +5,7 @@
 		border: 0;
 		background: none;
 		color: black;
+		display: none;
 	}
 	ul {
 		display: flex;
@@ -39,11 +40,10 @@
 
 @media (max-width: 1024px) {
 
-	.menu-toggle {
-		display: block;
-	}
-
 	.main-navigation {
+		.menu-toggle {
+			display: block;
+		}
 		ul {
 			display: block;
 			box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);

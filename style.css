@@ -826,7 +826,8 @@ textarea {
   .main-navigation .menu-toggle {
     border: 0;
     background: none;
-    color: black; }
+    color: black;
+    display: none; }
   .main-navigation ul {
     display: flex;
     list-style: none;
@@ -842,7 +843,7 @@ textarea {
     text-decoration: none; }
 
 @media (max-width: 1024px) {
-  .menu-toggle {
+  .main-navigation .menu-toggle {
     display: block; }
   .main-navigation ul {
     display: block;
